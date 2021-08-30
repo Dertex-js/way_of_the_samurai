@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     dialogsPage: {
         dialogs: [
@@ -32,10 +34,20 @@ let state = {
             },
             friendAzaliya: {
                 name: "Azaliya",
-                href: "https://sun2.ufanet.userapi.com/s/v1/ig2/Pe5ATZjEpflHLLGjbxPOL_z93ULU8S1YHAbFoa6v0xjc2MZ1Fwpcyaz_f4gIJwPHAV6ewDp2qgN0r3kEa8JyhIDM.jpg?size=50x50&quality=96&crop=85,85,683,683&ava=1",
+                href: "https://sun1.ufanet.userapi.com/s/v1/ig2/XFqZ1dI_YYgKGn0Nndr5UzKPHpssWnAKlaVfZQx1wGpn8nWNCOtqaMzrLvgbrmWizBZQV5Tm4O_UUlH_vExv6v0l.jpg?size=50x50&quality=95&crop=288,531,1152,1152&ava=1",
             },
         }
     }
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCount: 0
+    }
+    state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state)
 }
 
 export default state;
