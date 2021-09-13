@@ -1,3 +1,7 @@
+let store = {
+
+}
+
 let rerenderEntireTree = () => {
     console.log("ch")
 }
